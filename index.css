@@ -29,6 +29,9 @@ h2, h3 {
 p, pre {
 	max-width: 800px;
 }
+p {
+	margin-bottom: .5em;
+}
 header p {
 	margin-top: .5em;
 }
@@ -43,14 +46,18 @@ figcaption {
 	margin-right: auto;
 }
 
-.nav-steps ol {
+.nav {
 	list-style: none;
-	margin-top: 1em;
 }
 
 .preview-3d {
+	margin: .5em 0;
+}
+.preview-3d iframe {
 	width: 100%;
 	height: 500px;
+	overflow: hidden;
+	max-width: 800px;
 }
 
 header {
@@ -86,4 +93,10 @@ a:hover, a:focus {
 .figure img {
 	width: 100%;
 	height: auto;
+}
+
+.illustration {
+	float: left;
+	padding: 10px;
+	max-width: 100%;
 }

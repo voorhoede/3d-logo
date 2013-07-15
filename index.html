@@ -2,21 +2,71 @@
 <html>
 <head>
 <title>Voorhoede Logo in 3D</title>
-<link rel="stylesheet" href="article.css" />
+<link rel="stylesheet" href="index.css" />
 </head>
 <body>
 <article class="article">
 
 	<header class="clearfix">
 		<h1>Voorhoede Logo in 3D</h1>
-		<ul>
-			<li>result team blue: <a href="shield/">Shield</a></li>
-			<li>result team red: <a href="#">Knight</a></li>
+		<img class="illustration" src="media/3d-logo.png" alt="" width="294" height="313" />
+		<p>
+			At <a href="http://voorhoede.nl" target="_blank">de Voorhoede</a> we
+			keep a close eye on the latest new web standards and technologies.
+			Every now and then we organize in-house workshops to experiment with
+			these new features. During our our workshop '3D in the browser' we
+			we're introduced to the latest developments in 3D technology used on
+			the web, the current state and browser support. We then divided into
+			two teams which both managed to develop a working 3D model in the
+			browser in just 3 hours. Coincidentally both using our Voorhoede logo
+			as their starting point.
+		</p>
+		<p>
+			In this post you'll find the results of our experiment with a short
+			description of each team's process:
+		</p>
+		<ul class="nav">
+			<li><a href="#introducting-3d-in-the-browser">Introducing 3D in the browser</a></li>
+			<li><a href="#result-team-blue">Result team blue: Shield</a></li>
+			<li><a href="#result-team-red">Result team red: Knight</a></li>
 		</ul>
 	</header>
 
-	<section>
+	<section id="introducting-3d-in-the-browser">
 		<h2>Introducing 3D in the browser</h2>
+		<p>
+			Arend, the latest addition to our developers team, is a 3D / CAD / CAM
+			savvy developer. So who better to show us around in the possibilities
+			of 3D in the browser? Arend introduces the team into
+			<q cite="http://www.chromeexperiments.com/webgl/"><a href="http://www.khronos.org/webgl/" target="_blank">
+				WebGL</a>, a new web technology that brings hardware-accelerated
+				3D graphics to the browser without installing additional software
+			</q>.
+			The popularity of WebGL is increasing and <a href="http://caniuse.com/#search=svg" target="_blank">
+			most features are widely support in modern browsers</a>.
+		</p>
+		<p>
+			To show just how powerful WebGL is Arend presents a few teasing examples:
+			<a href="http://madebyevan.com/webgl-water/" target="_blank">WebGL Water</a>,
+			<a href="http://polycraftgame.com/" target="_blank">Polycraft Game</a>,
+			<a href="http://www.simlab-soft.com/Downloads/WebGL/Shelve_demo.html" target="_blank">Shelves with material picker</a> and
+			<a href="http://www.unrealengine.com/html5/" target="_blank">Epic Citadel powered by the Unreal Engine</a>.
+		</p>
+		<p>
+			To enable developers to quickly work with 3D in the browser, Arend
+			suggests a few frameworks:
+			<a href="http://threejs.org/" target="_blank">three.js</a>,
+			<a href="http://www.babylonjs.com/" target="_blank">Babylon.js</a>,
+			<a href="https://github.com/processing-js/processing-js/#readme" target="_blank">Processing.js</a>,
+			<a href="http://www.voodoojs.com/" target="_blank">Voodoo.js</a>.
+		</p>
+		<p>
+			As a bonus, our special guest <a href="http://dap3.nl/" target="_blank">Sander</a>,
+			did a short demonstration of the <a href="https://www.leapmotion.com/" target="_blank">
+			LeapMotion</a>, an advanced motion sensor enabling gesture input using
+			up to 4 hands, which even works in the browser, for instance with three.js.
+			Seems like a fantastic topic for our next experiments workshop.
+		</p>
 		<div class="clearfix">
 			<figure class="figure">
 				<img src="media/arend-explaining-3d-in-the-browser.jpg" alt="Arend explaining 3D in the browser" width="800" height="600" />
@@ -29,17 +79,89 @@
 		</div>
 	</section>
 
-	<section>
+	<section id="result-team-blue">
 		<h2>Result team blue: Shield</h2>
-		<figure>
-			<iframe class="preview-3d" src="shield/">
+		<p>
+			Team blue - Jasper, Sander & Thadee - translated the Voorhoede logo
+			into a materialized 3D object, which they then added in a 3D scene
+			with lighting, shadows and animations.
+		</p>
+		<figure class="preview-3d">
+			<iframe src="shield/">
 				Viewing these results required a browser with WebGL support.
 			</iframe>
 			<figcaption>
-				Preview of the 3D logo shield developed by the blue team.
+				Preview of the 3D Logo Shield developed by the blue team.
 				(<a href="shield/">open 3D model in new window</a>)
 			</figcaption>
 		</figure>
+		<p>
+			To create the 3D model the team imported the <a href="https://github.com/voorhoede/logo-using-font/tree/gh-pages/source" target="_blank">
+			Voorhoede logo as vector file</a> into the <a href="http://www.rhino3d.com/" target="_blank">
+			Rhino 3D</a> modeling software. The imported curves were then extruded
+			and manipulated to create the geometry of the 3D logo shield. The
+			logo colors were added using object materials rather than layer materials
+			to ensure these are included in the export to the <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file" target="_blank">
+			obj format.</a>
+		</p>
+		<p>
+			To render and control the 3D logo shield in the browser, the team
+			leverages the browsers' WebGL capability, using the <a href="http://threejs.org/" target="_blank">
+			three.js library</a>. The result is based on the <a href="https://github.com/mrdoob/three.js/blob/r58/examples/webgl_loader_obj.html" target="_blank">
+			obj loader example</a> and replaces the default model by the <a href="https://github.com/voorhoede/3d-logo/blob/gh-pages/shield/models/logo.obj" target="_blank">
+			obj model of the 3D logo shield</a>. The colors are added by using the
+			<a href="https://github.com/mrdoob/three.js/blob/r58/examples/webgl_loader_obj_mtl.html#L87">
+			mtl material loader</a>. Transparency is added to the 'V emblem' by
+			directly editing the diffusion value in the <a href="https://github.com/voorhoede/3d-logo/blob/gh-pages/shield/models/logo.mtl#L23" target="_blank">
+			exported mtl file</a>. For lighting the team added a hemisphere and
+			directional light, simulating a sunny day. Adding shadows and animating
+			individual parts of the appeared more difficult. The light's castShadow
+			and ground surface receiveShadow properties were set to true. However
+			no shadows were rendered yet. The 3D model loaded into the scene was
+			actually a group in which the invidual parts of the shield were nested.
+			<a href="https://github.com/voorhoede/3d-logo/blob/gh-pages/shield/index.js#L87">
+			By iterating through these children their shadow properties could also
+			be enabled</a>.  Finally these children - the left and right side of the
+			shield and the emblem - could also be <a href="https://github.com/voorhoede/3d-logo/blob/gh-pages/shield/index.js#L151" target="_blank">
+			animated in a sequence</a> by manipulating their position and rotation
+			using <a href="http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/" target="_blank">
+			requestAnimationFrame</a>.
+		</p>
+		<p>
+			You can <a href="shield/">view the 3D Logo Shield in a new window</a>.
+		</p>
+	</section>
+
+	<section id="result-team-red">
+		<h2>Result team red: Knight</h2>
+		<p>
+			Team red - Arend, Jeroen, Sanne - transformed an existing 3D model and
+			scene of an average male into a knight equipped with a sword and the
+			Voorhoede logo as a shield.
+		</p>
+		<figure class="preview-3d">
+			<iframe src="knight/" scrolling="no">
+				Viewing these results required a browser with WebGL support.
+			</iframe>
+			<figcaption>
+				Preview of the 3D Knight developed by the red team.
+				(<a href="knight/">open 3D model in new window</a>)
+			</figcaption>
+		</figure>
+		<p>
+			Rather than starting from scratch, this team imported the three.js example
+			of the <a href="https://github.com/mrdoob/three.js/blob/r58/examples/webgl_loader_obj_mtl.html#L87" target="_blank">
+			materialized 3D model of an average male</a> and added a sword and shield
+			to the model. Just like the blue team, this team added colors to the
+			model using object materials and exported the model to an obj & mtl file.
+		</p>
+		<p>
+			The examples used by both teams include a pointer listener enabling you
+			to tumble around the 3D model, so don't forget to try that out.
+		</p>
+		<p>
+			You can <a href="knight/">view the 3D Knight in a new window</a>.
+		</p>
 	</section>
 
 	<footer>
