@@ -32,6 +32,10 @@ p, pre {
 header p {
 	margin-top: .5em;
 }
+figcaption {
+	font-size: .8em;
+	font-style: italic;
+}
 
 .article {
 	width: 80%;
@@ -72,4 +76,14 @@ a, a:visited {
 }
 a:hover, a:focus {
 	color: #EDDD3D;
+}
+
+.figure {
+	float: left;
+	width: 48%;
+	margin: 1%;
+}
+.figure img {
+	width: 100%;
+	height: auto;
 }

@@ -152,7 +152,7 @@
 	var step = 0;
 	function animateLogo(){
 
-		if(shieldL.position === undefined || shieldR.position === undefined || shieldV.rotation === undefined){
+		if(typeof shieldL !== 'object' || typeof shieldR !== 'object' || typeof shieldV !== 'object' ){
 			return;
 		}
 		
